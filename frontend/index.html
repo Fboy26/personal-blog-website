@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Blog</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Added accessibility meta tags -->
+  <meta name="description" content="Personal blog about tech, creativity and web development by Nareg Guleserian">
+</head>
+<body>
+  <header role="banner">
+    <div class="logo" aria-label="MyBlog logo">MyBlog</div>
+    <nav role="navigation" aria-label="Main navigation">
+      <ul>
+        <li><a href="#" id="nav-home" aria-label="Home" aria-current="page">Home</a></li>
+        <li><a href="#" id="nav-about" aria-label="About">About</a></li>
+        <li><a href="#" id="nav-services" aria-label="Services">Services</a></li>
+        <li><a href="#" id="nav-profile" aria-label="Profile">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" role="main">
+    <!-- Updated Home Section -->
+    <section id="home" class="section active" aria-labelledby="home-heading">
+      <div class="home-header">
+        <h1 id="home-heading" tabindex="-1">Welcome to MyBlog</h1>
+        <p class="home-subtitle">Exploring the Universe of Tech and Creativity</p>
+      </div>
+      
+      <section class="post-form" aria-labelledby="post-form-heading">
+        <h2 id="post-form-heading">Create a New Post</h2>
+        <p class="form-intro">Share your thoughts with the world.</p>
+        <form id="postForm" onsubmit="createPost(event)" aria-label="New post form">
+          <div class="form-group">
+            <label for="title">Post Title</label>
+            <input type="text" id="title" placeholder="Enter Post Title" required aria-required="true">
+          </div>
+          <div class="form-group">
+            <label for="content">Post Content</label>
+            <textarea id="content" placeholder="Write your post here..." required aria-required="true"></textarea>
+          </div>
+          <button type="submit" aria-label="Publish post">Publish Now</button>
+        </form>
+      </section>
+
+      <section class="trending-posts" aria-labelledby="trending-heading">
+        <h2 id="trending-heading">Trending Posts</h2>
+        <div class="posts" id="posts" aria-live="polite" aria-atomic="true"></div>
+        <button id="load-more" class="load-more-btn" style="display: none;" aria-label="Load more posts">Load More</button>
+      </section>
+    </section>
+
+    <!-- About Section (with accessibility improvements) -->
+    <section id="about" class="section" aria-labelledby="about-heading">
+      <h2 id="about-heading" tabindex="-1">About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Hello! I'm Nareg, a passionate blogger and developer with a love for exploring the intersections of technology, creativity, and human experience.</p>
+          <p>With years of experience in web development and content creation, I founded MyBlog to share insights, tutorials, and stories that inspire and inform. My mission is to bridge the gap between complex ideas and accessible knowledge, all while embracing the vast possibilities of the digital universe.</p>
+          <p>When I'm not coding or writing, you can find me stargazing, reading sci-fi, or experimenting with new tech trends.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section (with accessibility improvements) -->
+    <section id="services" class="section" aria-labelledby="services-heading">
+      <h2 id="services-heading" tabindex="-1">Services</h2>
+      <p class="services-intro">I offer a range of professional services to help you succeed in the digital space:</p>
+      <div class="services-grid" role="list">
+        <div class="service-card" role="listitem">
+          <h3>Blog Writing</h3>
+          <p>Crafting engaging, well-researched content tailored to your audience, from tech insights to creative narratives.</p>
+        </div>
+        <div class="service-card" role="listitem">
+          <h3>Web Development</h3>
+          <p>Building responsive, high-performance websites and applications with modern tools and best practices.</p>
+        </div>
+        <div class="service-card" role="listitem">
+          <h3>Tech Consulting</h3>
+          <p>Providing expert advice on software solutions, project planning, and optimizing your tech stack.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profile Section (with accessibility improvements) -->
+    <section id="profile" class="section" aria-labelledby="profile-heading">
+      <h2 id="profile-heading" tabindex="-1">Profile</h2>
+      <div class="profile-content">
+        <div class="profile-details">
+          <h3>Nareg Guleserian</h3>
+          <p class="profile-tagline">Blogger | Developer | Cosmic Explorer</p>
+          <p class="profile-bio">I'm a dedicated professional with a passion for creating impactful digital experiences. Based in Yerevan, I specialize in turning ideas into reality through code and words.</p>
+          <div class="profile-info">
+            <p><i class="fas fa-briefcase" aria-hidden="true"></i> <span>Occupation: Blogger & Full-Stack Developer</span></p>
+            <p><i class="fas fa-envelope" aria-hidden="true"></i> <span>Contact: </span><a href="mailto:nguleserian@gmail.com">nguleserian@gmail.com</a></p>
+            <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span>Location: Yerevan/Armenia</span></p>
+          </div>
+          <div class="profile-skills">
+            <h4 id="skills-heading">Skills</h4>
+            <ul aria-labelledby="skills-heading">
+              <li>JavaScript & Node.js</li>
+              <li>HTML/CSS</li>
+              <li>MongoDB</li>
+              <li>Content Creation</li>
+            </ul>
+          </div>
+          <div class="profile-social" aria-label="Social media links">
+            <a href="https://x.com/Cosmos_DA0" target="_blank" aria-label="Twitter profile" rel="noopener"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/nareg-guleserian-368428352/" target="_blank" aria-label="LinkedIn profile" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+            <a href="https://github.com/Fboy26" target="_blank" aria-label="GitHub profile" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; <span id="current-year">2023</span> MyBlog by Nareg Guleserian. All rights reserved.</p>
+  </footer>
+
+  <script src="index.js"></script>
+  <!-- Add script to update year automatically -->
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Blog</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo" aria-label="MyBlog logo">MyBlog</div>
+    <nav>
+      <ul>
+        <li><a href="#" id="nav-home" aria-label="Home">Home</a></li>
+        <li><a href="#" id="nav-about" aria-label="About">About</a></li>
+        <li><a href="#" id="nav-services" aria-label="Services">Services</a></li>
+        <li><a href="#" id="nav-profile" aria-label="Profile">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+   
+    <section id="home" class="section active">
+      <div class="home-header">
+        <h1>Welcome to MyBlog</h1>
+        <p class="home-subtitle">Exploring the Universe of Tech and Creativity</p>
+      </div>
+      
+      <section class="post-form">
+        <h2>Create a New Post</h2>
+        <p class="form-intro">Share your thoughts with the world.</p>
+        <form id="postForm" onsubmit="createPost(event)">
+          <input type="text" id="title" placeholder="Enter Post Title" required aria-label="Post title">
+          <textarea id="content" placeholder="Write your post here..." required aria-label="Post content"></textarea>
+          <button type="submit">Publish Now</button>
+        </form>
+      </section>
+
+      <section class="trending-posts">
+        <h2>Trending Posts</h2>
+        <div class="posts" id="posts" aria-live="polite"></div>
+        <button id="load-more" class="load-more-btn" style="display: none;">Load More</button>
+      </section>
+    </section>
+
+    
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Hello! I'm Nareg, a passionate blogger and developer with a love for exploring the intersections of technology, creativity, and human experience.</p>
+          <p>With years of experience in web development and content creation, I founded MyBlog to share insights, tutorials, and stories that inspire and inform. My mission is to bridge the gap between complex ideas and accessible knowledge, all while embracing the vast possibilities of the digital universe.</p>
+          <p>When I'm not coding or writing, you can find me stargazing, reading sci-fi, or experimenting with new tech trends.</p>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="services" class="section">
+      <h2>Services</h2>
+      <p class="services-intro">I offer a range of professional services to help you succeed in the digital space:</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Blog Writing</h3>
+          <p>Crafting engaging, well-researched content tailored to your audience, from tech insights to creative narratives.</p>
+        </div>
+        <div class="service-card">
+          <h3>Web Development</h3>
+          <p>Building responsive, high-performance websites and applications with modern tools and best practices.</p>
+        </div>
+        <div class="service-card">
+          <h3>Tech Consulting</h3>
+          <p>Providing expert advice on software solutions, project planning, and optimizing your tech stack.</p>
+        </div>
+      </div>
+    </section>
+
+   
+    <section id="profile" class="section">
+      <h2>Profile</h2>
+      <div class="profile-content">
+        <div class="profile-details">
+          <h3>Nareg Guleserian</h3>
+          <p class="profile-tagline">Blogger | Developer | Cosmic Explorer</p>
+          <p class="profile-bio">I'm a dedicated professional with a passion for creating impactful digital experiences. Based in Yerevan, I specialize in turning ideas into reality through code and words.</p>
+          <div class="profile-info">
+            <p><i class="fas fa-briefcase"></i> Occupation: Blogger & Full-Stack Developer</p>
+            <p><i class="fas fa-envelope"></i> Contact: nguleserian@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Location: Yerevan/Armenia</p>
+          </div>
+          <div class="profile-skills">
+            <h4>Skills</h4>
+            <ul>
+              <li>JavaScript & Node.js</li>
+              <li>HTML/CSS</li>
+              <li>MongoDB</li>
+              <li>Content Creation</li>
+            </ul>
+          </div>
+          <div class="profile-social">
+            <a href="https://x.com/Cosmos_DA0" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/nareg-guleserian-368428352/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Fboy26" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>
+
+-->
