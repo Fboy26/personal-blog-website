@@ -1,4 +1,4 @@
-const API_URL = '/.netlify/functions/api/posts';
+const API_URL = 'http://localhost:5001/api/posts';
 let page = 1;
 const postsPerPage = 6;
 
